@@ -1,6 +1,7 @@
 #K I E L
 
-![banner] (Kiel.png)
+![banner](Kiel.png)
+
 Untuk memudahkan menjalankan program 
 ```
 pkg install git -y
