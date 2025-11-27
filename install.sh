@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 set -e
 
-REPO_URL="https://github.com/Kiel-P/menupy/blob/main/main.py"
+REPO_URL="https://raw.githubusercontent.com/Kiel-p/menupy/main/main.py"
 TARGET="$HOME/main.py"
 BASHRC="$HOME/.bashrc"
 MARKER="# MENUPY-AUTO-MENU"
