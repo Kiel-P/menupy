@@ -33,4 +33,4 @@ echo "[4/4] Done!"
 echo
 echo "✅ Menu terpasang."
 echo "➡️ Tutup Termux lalu buka lagi untuk melihat menu otomatis."
-echo "ℹ️ Untuk uninstall: bash ~/menutrmx/uninstall.sh"
+echo "ℹ️ Untuk uninstall: bash ~/menupy/uninstall.sh"
