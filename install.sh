@@ -1,10 +1,10 @@
 #!/data/data/com.termux/files/usr/bin/bash
 set -e
 
-REPO_URL="https://github.com/Kiel-P/Main_py"
+REPO_URL="https://github.com/Kiel-P/menupy/blob/main/main.py"
 TARGET="$HOME/main.py"
 BASHRC="$HOME/.bashrc"
-MARKER="# MENUTRMX-AUTO-MENU"
+MARKER="# MENUPY-AUTO-MENU"
 
 echo "[1/4] Install dependencies..."
 pkg update -y >/dev/null
