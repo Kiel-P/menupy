@@ -12,13 +12,13 @@ draw_progress() {
     local num=$(( p * width / 100 ))
     local bar=$(printf "%${num}s" | tr ' ' '#')
     local space=$(printf "%$((width - num))s" | tr ' ' '-')
-    printf "\r\33[96mProgress: [%-s%s] %d%%\e[0m" "$bar" "$space" "$p"
+    printf "\r\33[1;95mProgress: [%-s%s] %d%%\e[0m" "$bar" "$space" "$p"
 }
 
 clear
 echo -e "\033[91m=== Installing MenuPy ===\e[0m"
 
-# [1/4] Install Dependencies
+# [1/4] \033[93mInstall Dependencies
 echo -e "\n[1/4] Memasang dependencies..."
 (pkg update -y && pkg install python git curl -y && pip install -q rich) > /dev/null 2>&1 &
 pid=$!
@@ -27,13 +27,13 @@ while kill -0 $pid 2>/dev/null; do
 done
 #draw_progress 40
 
-# [2/4] Download main.py
+# [2/4] \033[93mDownload main.py
 echo -e "\n\n[2/4] Mengunduh main.py..."
 curl -fsSL "$REPO_URL" -o "$TARGET" > /dev/null 2>&1
 chmod +x "$TARGET"
 for i in {1..100}; do draw_progress $i; sleep 0.02; done
 
-# [3/4] Setup auto-run
+# [3/4] \033[93mSetup auto-run
 echo -e "\n\n[3/4] Konfigurasi .bashrc..."
 if grep -q "$MARKER" "$BASHRC" 2>/dev/null; then
   sed -i "/$MARKER/,+3d" "$BASHRC"
@@ -54,5 +54,5 @@ echo "-------------------------------------------------------"
 echo "➡️  Tutup & buka kembali Termux untuk melihat menu."
 echo "ℹ️  Uninstall: bash ~/menupy/uninstall.sh"
 echo
-echo "-------------------------"By.KIHEO"----------------------"
+echo "-------------------------\033[1m"By.KIHEO"----------------------"
 #echo "-------------------------------------------------------"
