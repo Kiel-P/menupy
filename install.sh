@@ -54,4 +54,9 @@ echo "-------------------------------------------------------"
 echo "➡️  Tutup & buka kembali Termux untuk melihat menu."
 echo "ℹ️  Uninstall: bash ~/menupy/uninstall.sh"
 echo                 "By.KIHEO"
-scho "-------------------------------------------------------"
+cols=$(tput cols)
+text="K I H E O"
+
+# Menghitung posisi tengah
+printf "%*s\n" $(((${#text}+$cols)/2)) "$text"
+echo "-------------------------------------------------------"
