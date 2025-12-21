@@ -25,7 +25,7 @@ pid=$!
 while kill -0 $pid 2>/dev/null; do
     for i in {1..100}; do draw_progress $i; sleep 0.1; done
 done
-draw_progress 40
+#draw_progress 40
 
 # [2/4] Download main.py
 echo -e "\n\n[2/4] Mengunduh main.py..."
@@ -53,8 +53,5 @@ echo "-------------------------------------------------------"
 
 echo "➡️  Tutup & buka kembali Termux untuk melihat menu."
 echo "ℹ️  Uninstall: bash ~/menupy/uninstall.sh"
-cols=$(tput cols)
-text="K I H E O"
-printf "%*s\n" $(((${#text}+$cols)/2)) "$text"
-
+echo                 "By.KIHEO"
 scho "-------------------------------------------------------"
