@@ -16,10 +16,10 @@ draw_progress() {
 }
 
 clear
-echo -e "\033[91m=== Installing MenuPy ===\e[0m"
+echo -e "\033[96m===      ••••••Installing MenuPy••••••      ===\e[0m"
 
-# [1/4] \033[93mInstall Dependencies
-echo -e "\n[1/4] Memasang dependencies..."
+# [1/4] Install Dependencies
+echo -e "\n[1/4] \033[93mMemasang dependencies..."
 (pkg update -y && pkg install python git curl -y && pip install -q rich) > /dev/null 2>&1 &
 pid=$!
 while kill -0 $pid 2>/dev/null; do
@@ -28,13 +28,13 @@ done
 #draw_progress 40
 
 # [2/4] \033[93mDownload main.py
-echo -e "\n\n[2/4] Mengunduh main.py..."
+echo -e "\n\n[2/4] \033[93mMengunduh main.py..."
 curl -fsSL "$REPO_URL" -o "$TARGET" > /dev/null 2>&1
 chmod +x "$TARGET"
 for i in {1..100}; do draw_progress $i; sleep 0.02; done
 
 # [3/4] \033[93mSetup auto-run
-echo -e "\n\n[3/4] Konfigurasi .bashrc..."
+echo -e "\n\n[3/4] \033[93mKonfigurasi .bashrc..."
 if grep -q "$MARKER" "$BASHRC" 2>/dev/null; then
   sed -i "/$MARKER/,+3d" "$BASHRC"
 fi
