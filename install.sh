@@ -11,7 +11,7 @@ draw_progress() {
     local p=$1
     local num=$(( p * width / 100 ))
     local bar=$(printf "%${num}s" | tr ' ' '#')
-    local space=$(printf "%$((width - num))s" | tr ' ' '/')
+    local space=$(printf "%$((width / num))s" | tr ' ' '-')
     printf "\r\e[32mProgress: [%-s%s] %d%%\e[0m" "$bar" "$space" "$p"
 }
 
