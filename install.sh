@@ -50,6 +50,10 @@ for i in {71..100}; do draw_progress $i; sleep 0.02; done
 # [4/4] Done
 echo -e "\n\n\e[1;32m✅ Instalasi Selesai!\e[0m"
 echo "-------------------------------------------------------"
+cols=$(tput cols)
+text="K I H E O"
 echo "➡️  Tutup & buka kembali Termux untuk melihat menu."
 echo "ℹ️  Uninstall: bash ~/menupy/uninstall.sh"
-echo By. K I H E O "-------------------------------------------------------"
+printf "%*s\n" $(((${#text}+$cols)/2)) "$text"
+
+scho "-------------------------------------------------------"
