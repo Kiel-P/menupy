@@ -10,13 +10,13 @@ draw_progress() {
     local width=30
     local p=$1
     local num=$(( p * width / 100 ))
-    local bar=$(printf "%${num}s" | tr '-' '#')
-    local space=$(printf "%$((width - num))s" | tr '/' '-')
+    local bar=$(printf "%${num}s" | tr ' ' '#')
+    local space=$(printf "%$((width - num))s" | tr ' ' '-')
     printf "\r\e[32mProgress: [%-s%s] %d%%\e[0m" "$bar" "$space" "$p"
 }
 
 clear
-echo -e "\e[1;34m=== Installing MenuPy ===\e[0m"
+echo -e "\033[96m=== Installing MenuPy ===\e[0m"
 
 # [1/4] Install Dependencies
 echo -e "\n[1/4] Memasang dependencies..."
